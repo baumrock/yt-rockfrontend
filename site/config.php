@@ -129,3 +129,13 @@ $config->httpHosts = array('rockfrontend.ddev.site');
 $config->debug = true;
 
 $config->livereload = 1;
+
+
+// tracy config for ddev development
+$config->tracy = [
+  'localRootPath' => '/Users/bernhardbaumrock/youtube/rockfrontend/',
+];
+
+$config->rockmigrations = [
+  "syncSnippets" => true,
+];

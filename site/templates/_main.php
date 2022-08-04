@@ -14,13 +14,20 @@
 /** @var RockFrontend $rockfrontend */
 
 $home = $pages->get('/'); // homepage
-
+$rockfrontend
+	->styles()
+	->add("uikit-3.15.1/src/less/uikit.theme.less")
+	->addAll("sections")
+	;
+$rockfrontend
+	->scripts()
+	->add("uikit-3.15.1/dist/js/uikit.min.js")
+	;
 ?><!DOCTYPE html>
 <html lang="en">
 	<head id="html-head">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title><?php echo $page->title; ?></title>
-
 	</head>
 	<body>
 		<?= $rockfrontend->renderLayout($page) ?>

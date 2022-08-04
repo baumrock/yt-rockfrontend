@@ -1,4 +1,17 @@
 <main>
   I am the main section and you are viewing the page "{$page->title}"<br>
   <a n:if="$page->editable()" href="{$page->editUrl()}">edit</a>
+
+  <div>
+  {$page->edit('body')|noescape}
+  </div>
+
+  <div {alfred($page, ['fields'=>'gallery'])|noescape}>
+    <h2>{$page->galleryHeader()}</h2>
+    <img
+      n:foreach="$page->gallery as $img"
+      src="{$img->size(100,100)->url}"
+      alt="..."
+    />
+  </div>
 </main>
